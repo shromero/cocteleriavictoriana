@@ -3,19 +3,11 @@ html, body{
 }
 
 body{
-  background-color: #bfbfbf;
+  padding-top: 75px;
 }
 
 footer{
   background-color: #F8A5B9;
-
-}
-
-.whatsapp{
-	text-align: right;
-}
-.correo{
-	text-align: left;
 }
 
 .navbar{
@@ -27,15 +19,26 @@ footer{
 }
 
 .nav-link{
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
   
-  .nav-item-active{
-    background-color: white !important;
-    border-radius: 25px;
-    color: #222 !important;
-  }
+.nav-item.active{
+  background-color: white !important;
+  border-radius: 25px;
+  color: #222 !important;
+}
+
+.nav-item .dropdown-menu{
+  background-color: #F8A5B9;
+  border-radius: 0 0 5% 5%;
+  z-index: 1029;
+  border: none;
+}
+
+.nav-item .dropdown-menu .dropdown-item{
+  background-color: #F8A5B9;
+}
 
 .custom-top-navbar{
 	background-color: #AEDECE !important;
@@ -47,49 +50,50 @@ footer{
 }
 
 .wave {
-    position: relative;
-    top: -1px;
-    height: 5px;
-    border-top: 5px solid #F8A5B9;
-    background: transparent;
+  position: relative;
+  top: -1px;
+  height: 5px;
+  border-top: 5px solid #F8A5B9;
+  background: transparent;
+  z-index: 1030;
 }
 
 .wave:before {
-    position: absolute;
-    content: '';
-    top: -1px;
-    height: 8px;
-    width: 100%;
-    background-size: 15px 15px;
-    background-position: -5px -3px;
-    background-image: -webkit-radial-gradient(50% 0%, circle, #F8A5B9 50%, transparent 55%);
-    background-image: -moz-radial-gradient(50% 0%, circle, #F8A5B9 50%, transparent 55%);
-    background-image: radial-gradient(circle at 50% 0%, #F8A5B9 50%, transparent 55%);
+  position: absolute;
+  content: '';
+  top: -1px;
+  height: 8px;
+  width: 100%;
+  background-size: 15px 15px;
+  background-position: -5px -3px;
+  background-image: -webkit-radial-gradient(50% 0%, circle, #F8A5B9 50%, transparent 55%);
+  background-image: -moz-radial-gradient(50% 0%, circle, #F8A5B9 50%, transparent 55%);
+  background-image: radial-gradient(circle at 50% 0%, #F8A5B9 50%, transparent 55%);
+  z-index: 1030;
 }
 
 .wave-footer {
-    position: relative;
-    height: 5px;
-    border-bottom: 5px solid #F8A5B9;
-    background: transparent;
+  position: relative;
+  height: 5px;
+  border-bottom: 5px solid #F8A5B9;
+  background: transparent;
+  width: 100%;
 }
 
 .wave-footer:before {
-    position: absolute;
-    content: '';
-    bottom: 0px;
-    height: 8px;
-    width: 100%;
-    background-size: 12px 12px;
-    background-image: -webkit-radial-gradient(50% 100%, circle, #F8A5B9 50%, transparent 55%);
-    background-image: -moz-radial-gradient(50% 100%, circle, #F8A5B9 50%, transparent 55%);
-    background-image: radial-gradient(circle at 50% 100%, #F8A5B9 50%, transparent 55%);
+  position: absolute;
+  content: '';
+  bottom: 0px;
+  height: 8px;
+  width: 100%;
+  background-size: 12px 12px;
+  background-image: -webkit-radial-gradient(50% 100%, circle, #F8A5B9 50%, transparent 55%);
+  background-image: -moz-radial-gradient(50% 100%, circle, #F8A5B9 50%, transparent 55%);
+  background-image: radial-gradient(circle at 50% 100%, #F8A5B9 50%, transparent 55%);
 }
 
 section .container, section .container-fluid{
-  height: 100%;
-  background-color: #f9f9f9;
-  padding-top: 130px;
+  margin-top: 10px;
 }
 
 .imagen-inicio{
@@ -105,13 +109,31 @@ section .container, section .container-fluid{
   object-fit: cover;
 }
 
+//tab_productos
+#tab_productos .nav-item .nav-link{
+  color: #555;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+#tab_productos .nav-item .nav-link.active{
+  color: #555;
+  background-color: #F8A5B9 !important;
+  border: none !important;
+  
+}
+
+#tab_productos .nav-item{
+  width: 50% !important;
+}
+
 //Min device
 @media (min-width: 576px) {
 
 }
 @media (min-width: 768px) {
 
-  section{
+  section ,section .container, section .container-fluid{
     height: 100%;
   }
 
@@ -129,14 +151,9 @@ section .container, section .container-fluid{
 
 }
 @media (max-width: 767.98px) {
-  body{font-size: 12px;}
-	.whatsapp, .correo{
-		text-align: center;
-	}
 
   section .container, section .container-fluid{
     height: auto;
-    padding-top: 5px;
   }
 }
 @media (max-width: 991.98px) {
