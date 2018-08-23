@@ -24,5 +24,14 @@ $(document).ready(function(){
 	  } // End if
 
 	}); 
+	$(".products-description").on('click', function(event) {
+		if (this.hash !== "") {
+	    event.preventDefault();
+	    $(".products-collapse").each(function(){
+	    	$(this).collapse('hide');
+	    });
+			$(this.hash).collapse('show');
+		}
+	});
 
 });

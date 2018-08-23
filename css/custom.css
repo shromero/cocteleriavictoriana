@@ -2,11 +2,16 @@ html, body{
 	height: 100%;
 }
 
-body{
-  padding-top: 75px;
+html{
+  font-size: 1rem;
 }
 
-footer{
+body{
+  padding-top: 75px;
+  //background-color: #ddd;
+}
+
+.pie-pagina{
   background-color: #F8A5B9;
 }
 
@@ -93,6 +98,7 @@ footer{
 }
 
 section .container, section .container-fluid{
+  //background-color: white;
   margin-top: 10px;
 }
 
@@ -147,7 +153,6 @@ section .container, section .container-fluid{
 
 //Max device
 @media (max-width: 575.98px) {
-  body{font-size: 10px;}
 
 }
 @media (max-width: 767.98px) {
@@ -161,4 +166,22 @@ section .container, section .container-fluid{
 }
 @media (max-width: 1199.98px) {
 
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
 }
