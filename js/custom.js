@@ -34,6 +34,8 @@ $(document).ready(function(){
 		}
 	});
 
+	
+
 });
 
 function initMap() {
@@ -45,3 +47,39 @@ function initMap() {
   var marker = new google.maps.Marker({position: uluru, map: map});
 
 }
+
+var productos_json = JSON.parse(prods);
+Object.keys(productos_json).forEach(function(key) {
+  $.each(productos_json[key], function(index, value){
+		numero = index+1
+		var producto = '<div class="col-xs-12 col-sm-4 col-md-3" id="'+key+'_'+numero+'">';
+		producto +=			'<div class="card">';
+		producto +=					'<div class="hovereffect">';
+	  producto +=						'<a class="products-description" href="#'+key+'_'+numero+'_description">';
+	  producto +=							'<img class="card-img-top img-responsive" src="images/'+key+'/'+value["imagen"]+'" alt="Card image cap">';
+	  producto +=							'<div class="overlay">';
+		producto +=								'<h2>'+value["nombre"]+'</h2>';
+		producto +=								'<p>detalles</p>';
+		producto +=							'</div>';
+	  producto +=						'</a>';
+	  producto +=					'</div>';
+	  producto +=					'<div id="'+key+'_'+numero+'_description" class="collapse products-collapse" aria-labelledby="headingOne" data-parent="#'+key+'_'+numero+'">';
+		producto +=						'<div class="card-body">';
+		producto +=					    '<h5 class="card-title">'+value["nombre"]+'</h5>';
+		producto +=					    '<p class="card-text">'+value["descripcion"]+'</p>';
+		producto +=					  '</div>';
+		producto +=					  '<div class="card-footer">';
+		producto +=					  	'Precios';
+		producto +=					  	'<ul>';
+		$.each(value["precios"], function(index, precio){
+			producto +=					  	'<li>'+precio["unidades"]+' x '+precio["valor"]+'</li>';
+		});
+		producto +=					  	'</ul>';
+		producto +=					  '</div>';
+		producto +=					'</div>';
+		producto +=				'</div>';
+		producto +=			'</div>';
+		$('#row_'+key).append(producto);
+})
+})
+
