@@ -13,6 +13,12 @@ nav ul li a:hover {
 nav.stroke ul li a,
 nav.fill ul li a {
   position: relative;
+  color: rgba(0,0,0,.5) !important;
+}/* stroke */
+nav.stroke ul li a.active,
+nav.fill ul li a.active {
+  position: relative;
+  color: rgba(0,0,0,.9) !important;
 }
 nav.stroke ul li a:after,
 nav.fill ul li a:after {
@@ -28,6 +34,9 @@ nav.fill ul li a:after {
   height: 1px;
 }
 nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+nav.stroke ul li a.active:after {
   width: 100%;
 }
 
